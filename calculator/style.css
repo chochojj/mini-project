@@ -87,3 +87,7 @@
   .hide{
     display: none;
   }
+
+  .buttons > .isPressed {
+    background-color: #ef7993;
+}
