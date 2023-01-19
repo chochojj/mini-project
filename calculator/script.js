@@ -38,7 +38,7 @@ function calculate(n1, operator, n2) {
     const action = target.classList[0]; // 클릭된 HTML 엘리먼트에 클래스 정보
     const buttonContent = target.textContent; // 클릭된 HTML 엘리먼트의 텍스트 정보
     const buttonContainerArray = buttons.children;
-    // ! 위 코드는 수정하지 마세요.
+  
   
     if (target.matches('button')) {
       for (let i = 0; i < buttonContainerArray.length; i++) {
