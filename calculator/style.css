@@ -67,6 +67,10 @@
     border-bottom: 3px solid #86A69D;
     flex-grow: 1;
   }
+  .buttons button:hover {
+    transform: scale( 110% )
+    translateY(-2px)
+  }
   
   .clear , .calculate {
     width: 50%;
@@ -93,3 +97,4 @@
   .buttons > .isPressed {
     background-color: #86A69D;
 }
+

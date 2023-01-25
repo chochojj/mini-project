@@ -95,6 +95,8 @@ function calculate(n1, operator, n2) {
         }
         previousKey = 'calculate';
       }
+
+
     }
   });
   
