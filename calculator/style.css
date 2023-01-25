@@ -11,10 +11,12 @@
   body {
     background-image: url(https://i.pinimg.com/564x/d1/97/04/d19704edc6c95eeea4847004cc9c006c.jpg);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
+  
   
   .container {
     width: 350px;

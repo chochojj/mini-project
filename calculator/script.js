@@ -8,6 +8,8 @@ const calculatedResult = document.querySelector('.result'); // calculator__resul
 const display = document.querySelector('.displayNum'); // displayNum 엘리먼트 정보
 let firstNum, operatorForAdvanced, previousKey, previousNum;
 
+
+
 // n1과 n2를 operator에 따라 계산하는 함수
 function calculate(n1, operator, n2) {
   let result = 0;
@@ -99,4 +101,6 @@ function calculate(n1, operator, n2) {
 
     }
   });
+
+  
   
