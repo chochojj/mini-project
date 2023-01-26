@@ -107,7 +107,13 @@ function calculate(n1, operator, n2) {
   const body = document.querySelector('body');
   const carrot = document.querySelector('.carrot > img');
   carrot.addEventListener('click', function () {
-    console.log('당근모드')
-    body.classList.add('carrotMode');
+    
+    if(body.classList.contains('carrotMode')){
+      body.classList.remove('carrotMode');
+      console.log('당근모드 종료')
+    }else{
+      console.log('당근모드 시작')
+      body.classList.add('carrotMode');
+    }
     
   })
