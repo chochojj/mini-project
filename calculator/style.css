@@ -71,7 +71,8 @@
   }
   .buttons button:hover {
     transform: scale( 110% )
-    translateY(-2px)
+    translateY(-2px);
+    transition-duration: 1s ease-in-out;
   }
   
   .clear , .calculate {
