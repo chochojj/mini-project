@@ -17,7 +17,20 @@
     height: 100vh;
   }
   
-  
+  .carrot > img {
+    position: relative;
+    top: -10px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  .carrot > img:hover{
+    transform: 
+    translateY(-2px)
+    rotate(30deg);
+    cursor: pointer;
+  }
+
   .container {
     width: 350px;
     height: 520px;
@@ -72,7 +85,6 @@
   .buttons button:hover {
     transform: scale( 110% )
     translateY(-2px);
-    transition-duration: 1s ease-in-out;
   }
   
   .clear , .calculate {
@@ -101,3 +113,30 @@
     background-color: #86A69D;
 }
 
+/* 다크(당근) 모드 css */
+body.carrotMode .carrot > img {
+  filter:hue-rotate(-20deg)
+  drop-shadow(0px 0px 10px rgb(236, 166, 120)) ;
+}
+body.carrotMode .display{
+  border-bottom: 3px solid #f4a460;
+  background-color: #fff5ec;
+}
+body.carrotMode .buttons button {
+  border-bottom: 3px solid #f4a460;
+}
+body.carrotMode .operator {
+  background-color: rgb(163, 151, 137);
+  color: #fff;
+}
+body.carrotMode .container {
+  border: solid 6px #f4a460;
+  background-color: #ffffff;
+  border-bottom: solid 6px #d4955d;
+}
+body.carrotMode .clear,body.carrotMode .calculate   {
+  background-color: #f8dec2;
+}
+body.carrotMode .buttons > .isPressed {
+  background-color: #f4a460;
+}

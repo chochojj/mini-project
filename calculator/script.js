@@ -103,4 +103,11 @@ function calculate(n1, operator, n2) {
   });
 
   
-  
+  //다크(당근)모드
+  const body = document.querySelector('body');
+  const carrot = document.querySelector('.carrot > img');
+  carrot.addEventListener('click', function () {
+    console.log('당근모드')
+    body.classList.add('carrotMode');
+    
+  })
