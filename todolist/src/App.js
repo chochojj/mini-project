@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { createGlobalStyle } from 'styled-components';
+import TodoBox from './components/TodoBox';
+import TodoHeader from './components/TodoHeader';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0 auto;
+    padding : 0;
+
+    background: #4D4C7D;
+    display : flex;
+    justify-content: center;
+    /* body에 align-content: center;가 안먹음 ㅠ */
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <TodoBox>
+        <TodoHeader/>
+      </TodoBox>
+    </>
   );
 }
 
