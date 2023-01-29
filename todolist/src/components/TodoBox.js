@@ -10,7 +10,7 @@ const TodoBoxStyled = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 96px;
+    margin-top: 125px;
 `
 
 function TodoBox({children}){

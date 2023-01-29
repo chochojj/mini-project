@@ -4,6 +4,7 @@ import './App.css';
 import { createGlobalStyle } from 'styled-components';
 import TodoBox from './components/TodoBox';
 import TodoHeader from './components/TodoHeader';
+import TodoList from './components/TodoList';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,6 +24,7 @@ function App() {
       <GlobalStyle />
       <TodoBox>
         <TodoHeader/>
+        <TodoList/>
       </TodoBox>
     </>
   );
