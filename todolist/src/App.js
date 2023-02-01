@@ -2,9 +2,9 @@
 import React from 'react';
 import './App.css';
 import { createGlobalStyle } from 'styled-components';
-import TodoBox from './components/TodoBox';
-import TodoHeader from './components/TodoHeader';
 import TodoList from './components/TodoList';
+import Todo from './components/Todo';
+import AddForm from './components/AddForm';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,10 +22,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <TodoBox>
-        <TodoHeader/>
-        <TodoList/>
-      </TodoBox>
+      <TodoList>
+        <AddForm/>
+        <Todo/>
+      </TodoList>
     </>
   );
 }
