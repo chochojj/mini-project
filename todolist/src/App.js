@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React from 'react';
-import './App.css';
+// import './App.css';
 import { createGlobalStyle } from 'styled-components';
 import TodoList from './components/TodoList';
 import Todo from './components/Todo';
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     background: #4D4C7D;
     display : flex;
     justify-content: center;
-    /* body에 align-content: center;가 안먹음 ㅠ */
+    
   }
 `;
 

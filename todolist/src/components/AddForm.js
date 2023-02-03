@@ -18,7 +18,7 @@ const AddForm = memo(({ addTodo }) => {
     <form className="add-form">
       <input ref={input} value={value} onChange={onChangeInput} />
       <button type="submit" onClick={addTodo(value)}>
-        add
+        +
       </button>
     </form>
   );
