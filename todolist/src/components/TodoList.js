@@ -3,6 +3,17 @@ import AddForm from './AddForm';
 import Todo from './Todo';
 import styled from 'styled-components';
 
+const StyledTodoList = styled.div`
+  .todolist-box{
+    width: 400px;
+    height: 500px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+`
 
 const TodoList = () => {
   const [todoList, setTodoList] = useState([]);
@@ -78,11 +89,21 @@ const TodoList = () => {
     },
     [todoList]
   );
+  
+  const today = new Date();
+  const dateString = today.toLocaleString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  const dayName = today.toLocaleString('ko-KR', { weekday: 'long' });
 
   return (
-    <div className="box">
+    <StyledTodoList>
       <div className="todolist-box">
-        <h1>투두리스트</h1>
+        <h1>오늘의 할 일 목록</h1>
+        <span>{dateString}</span>
+        <span className="day">{dayName}</span>
         <AddForm addTodo={addTodo} />
         <ul>
           {todoList.map((todoInfo) => {
@@ -100,7 +121,7 @@ const TodoList = () => {
           })}
         </ul>
       </div>
-    </div>
+    </StyledTodoList>
   );
 };
 
