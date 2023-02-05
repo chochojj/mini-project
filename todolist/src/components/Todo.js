@@ -1,6 +1,66 @@
 import React, { useState, useRef, useEffect, memo } from 'react';
 import styled from 'styled-components';
 
+const StyledTodo = styled.div`
+  .list {
+    line-height: 30px;
+    display: flex;
+    list-style: none;
+    width: 340px;
+    align-items: center;
+    font-size:15px;
+    background-color: rgba(250, 240, 230, 0.425);
+    text-decoration: antiquewhite;
+    margin-bottom: 8px;
+  }
+
+  .list .check {
+    cursor: pointer;
+    align-self: center;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .list .todo {
+    overflow-wrap: break-word;
+    width: 270px;
+  }
+
+  .checked {
+    text-decoration: line-through;
+  }
+
+  .list button {
+    background-color: transparent;
+  }
+
+  .update-form input {
+    background-color: transparent;
+    border: none;
+    width: 260px;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 0;
+  }
+
+  .list button {
+    font-size: 1vh;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    font-weight: bold;
+    justify-self: center;
+    align-self: center;
+    border: none;
+  }
+  .list button:hover{
+    cursor: pointer;
+    background-color:rgba(133, 86, 40,0.7);
+    color: white;
+  }
+`
+
 const Todo = memo(
   ({ id, todo, isChecked, deleteTodo, updateTodo, toggleCheck }) => {
     const [value, setValue] = useState(todo);
@@ -48,31 +108,33 @@ const Todo = memo(
     };
 
     return (
-      <li className="list">
-        <span className="check" onClick={toggleCheck(id)}>
-          {isChecked ? '◼' : '◻'}
-        </span>
-        {isUpdate || (
-          <span
-            className={`todo ${isChecked ? 'checked' : ''}`}
-            onClick={onClickTodo}
-          >
-            {todo}
+      <StyledTodo>
+        <li className="list">
+          <span className="check" onClick={toggleCheck(id)}>
+            {isChecked ? '🥰' : '😶'}
           </span>
-        )}
-        {isUpdate && (
-          <form className="update-form" onSubmit={onFormSubmit}>
-            <input
-              ref={input}
-              value={value}
-              onChange={onChangeInput}
-              onBlur={onBlurInput}
-              onKeyUp={onKeyUpInput}
-            />
-          </form>
-        )}
-        <button onClick={deleteTodo(id)}>X</button>
-      </li>
+          {isUpdate || (
+            <span
+              className={`todo ${isChecked ? 'checked' : ''}`}
+              onClick={onClickTodo}
+            >
+              {todo}
+            </span>
+          )}
+          {isUpdate && (
+            <form className="update-form" onSubmit={onFormSubmit}>
+              <input
+                ref={input}
+                value={value}
+                onChange={onChangeInput}
+                onBlur={onBlurInput}
+                onKeyUp={onKeyUpInput}
+              />
+            </form>
+          )}
+          <button onClick={deleteTodo(id)}>X</button>
+        </li>
+      </StyledTodo>
     );
   }
 );

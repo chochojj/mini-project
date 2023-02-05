@@ -10,27 +10,66 @@ const StyledTodoList = styled.div`
     background-color: rgba(255,255,255,0.7);
     display: flex;
     flex-direction: column;
+
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0,0,0, 0.15);
+    box-shadow: 0px 0px 5px rgba(0,0,0, 0.1);
   }
-  ::selection {
-		background-color: black;
-		color: yellow;
+  .header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .info{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-top: 20px;
+  }
+  .info > span{
+    font-weight: bold;
+  }
+  .info > span::selection {
+    color: green;
 	}
 	h1::selection {
-		background-color: none;
 		color: orange;
   }
   h1 {
-    font-size: 24px;
-    line-height: 45px;
-    width: 80%;
-    height: 45px;
-    background-color: antiquewhite;
+    margin: 0;
+    font-size: 22px;
+    line-height: 50px;
+  }
+  .undone{
+    
   }
   .date{
-    background-color: antiquewhite;
+    width: 85%;
+    font-size: 13px;
+    font-weight:600;
+  }
+  .date > span::selection{
+		color: orange;
+  }
+  .day{
+    margin-left: 5px;
+  }
+  .day::selection{
+    color: orange;
+  }
+  ul{
+    padding: 0;
+    height: 340px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  ul::-webkit-scrollbar {
+    display: none;
   }
 `
 
@@ -120,11 +159,15 @@ const TodoList = () => {
   return (
     <StyledTodoList>
       <div className="todolist-box">
-        <h1>오늘의 할 일 목록</h1>
-        <div className='date'>
-          <span className='undone'></span>
-          <span>{dateString}</span>
-          <span className="day">{dayName}</span>
+        <div className='header'>
+          <div className='info'>
+            <h1>오늘의 할 일 목록</h1>
+            <span className='undone'>남은 일</span>
+          </div>
+          <div className='date'>  
+            <span>{dateString}</span>
+            <span className="day">{dayName}</span>
+          </div>
         </div>
         <AddForm addTodo={addTodo} />
         <ul>
