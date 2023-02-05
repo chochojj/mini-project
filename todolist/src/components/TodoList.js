@@ -33,6 +33,7 @@ const StyledTodoList = styled.div`
   }
   .info > span{
     font-weight: bold;
+    /* display: none; */
   }
   .info > span::selection {
     color: green;
@@ -155,6 +156,13 @@ const TodoList = () => {
     day: 'numeric'
   });
   const dayName = today.toLocaleString('ko-KR', { weekday: 'long' });
+  
+  //할일 상태 보기
+  // const todos = useTodoState();
+  // const undoneTasks = todos.filter(todo => !todo.done);
+  //{undoneTasks.length}개 
+  const undone = todoList.filter((todo)=> !todo.isChecked);
+  
 
   return (
     <StyledTodoList>
@@ -162,7 +170,7 @@ const TodoList = () => {
         <div className='header'>
           <div className='info'>
             <h1>오늘의 할 일 목록</h1>
-            <span className='undone'>남은 일</span>
+            <span className='undone'>{undone.length}개 </span>
           </div>
           <div className='date'>  
             <span>{dateString}</span>
