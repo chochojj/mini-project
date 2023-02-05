@@ -7,12 +7,31 @@ const StyledTodoList = styled.div`
   .todolist-box{
     width: 400px;
     height: 500px;
-    background-color: aliceblue;
+    background-color: rgba(255,255,255,0.7);
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0, 0.15);
   }
-
+  ::selection {
+		background-color: black;
+		color: yellow;
+	}
+	h1::selection {
+		background-color: none;
+		color: orange;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 45px;
+    width: 80%;
+    height: 45px;
+    background-color: antiquewhite;
+  }
+  .date{
+    background-color: antiquewhite;
+  }
 `
 
 const TodoList = () => {
@@ -102,8 +121,11 @@ const TodoList = () => {
     <StyledTodoList>
       <div className="todolist-box">
         <h1>오늘의 할 일 목록</h1>
-        <span>{dateString}</span>
-        <span className="day">{dayName}</span>
+        <div className='date'>
+          <span className='undone'></span>
+          <span>{dateString}</span>
+          <span className="day">{dayName}</span>
+        </div>
         <AddForm addTodo={addTodo} />
         <ul>
           {todoList.map((todoInfo) => {
