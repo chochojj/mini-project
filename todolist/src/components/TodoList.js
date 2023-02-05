@@ -157,12 +157,12 @@ const TodoList = () => {
   });
   const dayName = today.toLocaleString('ko-KR', { weekday: 'long' });
   
-  //할일 상태 보기
+  //남은 할일 갯수 보기
   // const todos = useTodoState();
   // const undoneTasks = todos.filter(todo => !todo.done);
   //{undoneTasks.length}개 
   const undone = todoList.filter((todo)=> !todo.isChecked);
-  
+
 
   return (
     <StyledTodoList>
