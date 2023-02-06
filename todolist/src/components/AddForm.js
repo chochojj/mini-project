@@ -36,9 +36,9 @@ const StyledAddForm = styled.div`
 
 const AddForm = memo(({ addTodo }) => {
   const [value, setValue] = useState('');
-  const input = useRef(null);
-  
   // 할일 입력칸(input)에 자동으로 포커스, 입력 후 초기화 시켜주는 코드
+  const input = useRef(null);
+
   useEffect(() => {
     input.current.focus();
     setValue('');
