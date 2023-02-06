@@ -46,9 +46,7 @@ const StyledTodoList = styled.div`
     font-size: 22px;
     line-height: 50px;
   }
-  .undone{
-    
-  }
+  
   .date{
     width: 85%;
     font-size: 13px;
@@ -163,6 +161,12 @@ const TodoList = () => {
   //{undoneTasks.length}개 
   const undone = todoList.filter((todo)=> !todo.isChecked);
 
+  //할일 퍼센테이지 
+  // let per
+  // if(todoList.length > 0){
+  //   per = Math.floor(100- ((undone.length/todoList.length)*100))
+  //  }
+   
 
   return (
     <StyledTodoList>
@@ -175,6 +179,7 @@ const TodoList = () => {
           <div className='date'>  
             <span>{dateString}</span>
             <span className="day">{dayName}</span>
+            {/* <span className='percent'></span> */}
           </div>
         </div>
         <AddForm addTodo={addTodo} />
@@ -185,7 +190,7 @@ const TodoList = () => {
                 key={todoInfo.id}
                 id={todoInfo.id}
                 todo={todoInfo.todo}
-                isChecked={todoInfo.isChecked}
+                isChecked={todoInfo.isChe222cked}
                 updateTodo={updateTodo}
                 deleteTodo={deleteTodo}
                 toggleCheck={toggleCheck}

@@ -59,6 +59,13 @@ const StyledTodo = styled.div`
     background-color:rgba(133, 86, 40,0.7);
     color: white;
   }
+  .list button::selection {
+		color: orange;
+  }
+  span::selection {
+		color: orange;
+  }
+  
 `
 
 const Todo = memo(
